@@ -1,7 +1,10 @@
-name: npm test
+name: build, tests, prettier, eslint
 
 on:
   pull_request:
+    branches:
+      - '**'
+  push_request:
     branches:
       - '**'
 

@@ -1,6 +1,8 @@
 # UI
 
-The web client for serving [@abyan-dev](https://github.com/abyan-dev) microservices built as a React-Vite SPA and installable as PWA using Serwist.
+The web client for serving [@abyan-dev](https://github.com/abyan-dev) microservices built as a React-Vite SPA and installable as PWA using Serwist for a native experience.
+
+## Running the client locally
 
 Install the dependencies
 
