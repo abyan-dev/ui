@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: '*',
     element: <NotFound />,
-  }
+  },
 ]);
 
 export function Router() {
