@@ -9,4 +9,11 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.mjs',
   },
-});
+  server: {
+    watch: {
+      usePolling: true,
+    },
+    host: "0.0.0.0", // needed for the Docker Container port mapping to work
+    port: 3000,
+  }
+})
