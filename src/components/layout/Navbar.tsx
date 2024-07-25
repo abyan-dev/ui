@@ -9,7 +9,7 @@ export function Navbar() {
 
   const items = navLinks.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
+      <Anchor href={item.link} className="hover:no-underline"><Menu.Item key={item.link}>{item.label}</Menu.Item></Anchor>
     ));
 
     if (menuItems) {
@@ -18,7 +18,7 @@ export function Navbar() {
           <Menu.Target>
             <Anchor
               href={link.link}
-              className={classes.link}
+              className={`${classes.link} no-underline`}
               onClick={(event) => event.preventDefault()}
             >
               <Center>
@@ -33,21 +33,23 @@ export function Navbar() {
     }
 
     return (
-      <a
+      <Anchor
         key={link.label}
         href={link.link}
-        className={classes.link}
+        className={`${classes.link} no-underline`}
         onClick={(event) => event.preventDefault()}
       >
         {link.label}
-      </a>
+      </Anchor>
     );
   });
 
   return (
     <header className={classes.header}>
       <Container className={classes.inner}>
-        <Title className="text-lg font-bold">abyan.dev</Title>
+        <Anchor href="/" className="text-zinc-300 hover:no-underline">
+          <Title className="text-lg font-bold hover:text-zinc-400">{siteConfig.appName}</Title>
+        </Anchor>
         <Group gap={5} visibleFrom="sm">
           {items}
         </Group>

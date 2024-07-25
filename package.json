@@ -1,7 +1,7 @@
 {
-  "name": "mantine-vite-template",
+  "name": "abyan.dev",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "@mantine/core": "7.11.2",
+    "@mantine/form": "^7.11.2",
     "@mantine/hooks": "7.11.2",
+    "@mantine/notifications": "^7.11.2",
     "@mantinex/mantine-logo": "^1.0.1",
     "@tabler/icons-react": "^3.11.0",
     "react": "^18.3.1",

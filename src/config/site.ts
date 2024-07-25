@@ -5,22 +5,20 @@ export const siteConfig = {
   source: 'https://github.com/abyan-dev',
   pages: {
     Home: '/',
+    Dashboard: "/dashboard",
     Login: '/auth/login',
     SignUp: '/auth/signup',
     ForgotPassword: '/auth/forgot',
-    VerifyEmail: '/auth/verify',
+    Verify: '/auth/verify',
   },
 };
 
 export const navLinks = [
   {
-    link: '#1',
+    link: '#',
     label: 'Productivity',
     links: [
-      { link: '/docs', label: 'Documentation' },
-      { link: '/resources', label: 'Resources' },
-      { link: '/community', label: 'Community' },
-      { link: '/blog', label: 'Blog' },
+      { link: '/productivity/tasks', label: 'My Tasks' },
     ],
   },
   { link: '#', label: 'Learn' },
