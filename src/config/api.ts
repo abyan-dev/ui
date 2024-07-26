@@ -7,5 +7,6 @@ export const apiEndpoints = {
     logout: `${gatewayEndpoint}/api/auth/logout`,
     verify: `${gatewayEndpoint}/api/auth/verify`,
     refresh: `${gatewayEndpoint}/api/auth/refresh`,
+    decode: `${gatewayEndpoint}/api/auth/decode`,
   }
 };

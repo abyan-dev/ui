@@ -1,6 +1,7 @@
 import { Container, Title, Text, Anchor } from '@mantine/core';
 import { LoginForm } from '@/components/forms/auth/LoginForm';
 import { siteConfig } from '@/config/site';
+import { useNavigate } from 'react-router-dom';
 
 export function LoginPage() {
   return (

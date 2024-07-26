@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useAuthContext } from "./useAuthContext";
 import { apiEndpoints } from "@/config/api";
 import { notifications } from "@mantine/notifications";
 

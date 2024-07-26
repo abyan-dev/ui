@@ -1,15 +1,21 @@
-import { Menu, Group, Center, Burger, Container, Anchor, Title, Button } from '@mantine/core';
+import { Menu, Group, Center, Burger, Container, Anchor, Title, Button, Avatar, Tooltip } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import { navLinks, siteConfig } from '@/config/site';
 import classes from './Navbar.module.scss';
+import { useAuth } from '@/hooks/useAuth';
+import { useLogout } from '@/hooks/useLogout';
+import { AccountMenu } from '../menu/AccountMenu';
 
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
 
+  const { user } = useAuth()
+  const { logout, isLoading } = useLogout()
+
   const items = navLinks.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Anchor href={item.link} className="hover:no-underline"><Menu.Item key={item.link}>{item.label}</Menu.Item></Anchor>
+      <Anchor key={item.link} href={item.link} className="hover:no-underline"><Menu.Item key={item.link}>{item.label}</Menu.Item></Anchor>
     ));
 
     if (menuItems) {
@@ -37,7 +43,6 @@ export function Navbar() {
         key={link.label}
         href={link.link}
         className={`${classes.link} no-underline`}
-        onClick={(event) => event.preventDefault()}
       >
         {link.label}
       </Anchor>
@@ -54,17 +59,34 @@ export function Navbar() {
           {items}
         </Group>
         <Group gap={8} visibleFrom="sm">
-          <Anchor href={siteConfig.pages.Login}>
-            <Button variant="default" color="gray">
-              Login
-            </Button>
-          </Anchor>
-          <Anchor href={siteConfig.pages.SignUp}>
-            <Button color="teal">Sign Up</Button>
-          </Anchor>
+          {user && (
+            <>
+              < Button
+                onClick={async () => await logout()}
+                disabled={isLoading}
+                variant="default"
+                color="gray"
+              >
+                Logout
+              </Button>
+              <AccountMenu />
+            </>
+          )}
+          {!user && (
+            <>
+              < Anchor href={siteConfig.pages.Login}>
+                <Button variant="default" color="gray">
+                  Login
+                </Button>
+              </Anchor>
+              <Anchor href={siteConfig.pages.SignUp}>
+                <Button color="teal">Sign Up</Button>
+              </Anchor>
+            </>
+          )}
         </Group>
         <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
       </Container>
-    </header>
+    </header >
   );
 }

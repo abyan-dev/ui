@@ -20,14 +20,16 @@ export function SignUpForm() {
       terms: false,
     },
   });
+
   const { signup, isLoading } = useSignup();
 
-  async function register(userDetails: UserDetails) {
+  async function handleSignup(userDetails: UserDetails) {
     const { name, email, password, confirmPassword } = userDetails;
-    const response = await signup(name, email, password, confirmPassword)
+    await signup(name, email, password, confirmPassword)
   }
+
   return (
-    <form onSubmit={form.onSubmit((userDetails) => register(userDetails))}>
+    <form onSubmit={form.onSubmit((userDetails) => handleSignup(userDetails))}>
       <Paper withBorder shadow="md" p={30} my={30} radius="md">
         <TextInput
           required
