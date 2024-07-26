@@ -6,7 +6,6 @@ export const siteConfig = {
   pages: {
     Home: '/',
     Dashboard: "/dashboard",
-    Documentation: "/docs",
     Terms: "/terms",
     Login: '/auth/login',
     SignUp: '/auth/signup',
@@ -26,5 +25,4 @@ export const navLinks = [
       { link: siteConfig.pages.Tasks, label: 'My Tasks' },
     ],
   },
-  { link: siteConfig.pages.Documentation, label: "Docs" }
 ];

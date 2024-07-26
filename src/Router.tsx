@@ -4,7 +4,7 @@ import { SignUpPage } from './pages/SignUp.page';
 import { VerifyPage } from "./pages/Verify.page";
 import { LoginPage } from './pages/Login.page';
 import { ForgotPasswordPage } from './pages/Forgot.page';
-import { NotFound } from './components/errors/not-found/NotFound';
+import { NotFoundPage } from './pages/NotFound.page';
 import { siteConfig } from './config/site';
 import { DashboardPage } from './pages/Dashboard.page';
 import { Navbar } from './components/layout/Navbar';
@@ -20,7 +20,7 @@ export const Router = () => {
         <Route path={siteConfig.pages.SignUp} element={<SignUpPage />} />
         <Route path={siteConfig.pages.Verify} element={<VerifyPage />} />
         <Route path={siteConfig.pages.ForgotPassword} element={<ForgotPasswordPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

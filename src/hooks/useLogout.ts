@@ -29,7 +29,7 @@ export const useLogout = () => {
         color: "teal",
       });
 
-      navigate("/dashboard")
+      navigate("/")
       dispatch({ type: "LOGOUT" })
     } catch (err: any) {
       setIsLoading(false);
