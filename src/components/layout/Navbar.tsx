@@ -3,9 +3,9 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import { navLinks, siteConfig } from '@/config/site';
 import classes from './Navbar.module.scss';
-import { useAuth } from '@/hooks/useAuth';
-import { useLogout } from '@/hooks/useLogout';
-import { AccountMenu } from '../menu/AccountMenu';
+import { useAuth } from '@/hooks/auth/useAuth';
+import { useLogout } from '@/hooks/auth/useLogout';
+import { AccountMenu } from '../menus/AccountMenu';
 
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
@@ -56,7 +56,7 @@ export function Navbar() {
           <Title className="text-lg font-bold hover:text-zinc-400">{siteConfig.appName}</Title>
         </Anchor>
         <Group gap={5} visibleFrom="sm">
-          {items}
+          {user && items}
         </Group>
         <Group gap={8} visibleFrom="sm">
           {user && (

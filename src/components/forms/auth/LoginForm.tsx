@@ -1,5 +1,5 @@
 import { siteConfig } from '@/config/site';
-import { useLogin } from '@/hooks/useLogin';
+import { useLogin } from '@/hooks/auth/useLogin';
 import { TextInput, PasswordInput, Checkbox, Anchor, Paper, Group, Button } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { Navigation } from 'react-router-dom';

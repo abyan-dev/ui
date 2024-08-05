@@ -1,12 +1,16 @@
-const gatewayEndpoint = import.meta.env.VITE_GATEWAY_ENDPOINT;
+const authEndpoint = "http://localhost:8080"
+const productivityEndpoint = "http://localhost:8081"
 
 export const apiEndpoints = {
   auth: {
-    signup: `${gatewayEndpoint}/api/auth/register`,
-    login: `${gatewayEndpoint}/api/auth/login`,
-    logout: `${gatewayEndpoint}/api/auth/logout`,
-    verify: `${gatewayEndpoint}/api/auth/verify`,
-    refresh: `${gatewayEndpoint}/api/auth/refresh`,
-    decode: `${gatewayEndpoint}/api/auth/decode`,
+    signup: `${authEndpoint}/api/auth/register`,
+    login: `${authEndpoint}/api/auth/login`,
+    logout: `${authEndpoint}/api/auth/logout`,
+    verify: `${authEndpoint}/api/auth/verify`,
+    refresh: `${authEndpoint}/api/auth/refresh`,
+    decode: `${authEndpoint}/api/auth/decode`,
+  },
+  productivity: {
+    tasks: `${productivityEndpoint}/api/productivity/tasks`,
   }
 };

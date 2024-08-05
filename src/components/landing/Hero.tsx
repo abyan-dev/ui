@@ -1,7 +1,7 @@
 import { Container, Text, Button, Group } from '@mantine/core';
 import { GithubIcon } from '@mantinex/dev-icons';
 import classes from './Hero.module.scss';
-import { useAuth } from '@/hooks/useAuth';
+import { useAuth } from '@/hooks/auth/useAuth';
 
 export function Hero() {
   const { user } = useAuth()

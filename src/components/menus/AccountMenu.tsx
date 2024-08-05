@@ -1,5 +1,5 @@
-import { useAuth } from '@/hooks/useAuth';
-import { useLogout } from '@/hooks/useLogout';
+import { useAuth } from '@/hooks/auth/useAuth';
+import { useLogout } from '@/hooks/auth/useLogout';
 import { Menu, rem, Avatar } from '@mantine/core';
 import {
   IconSettings,

@@ -1,6 +1,6 @@
 import { TextInput, PasswordInput, Checkbox, Paper, Group, Button } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useSignup } from '@/hooks/useSignup';
+import { useSignup } from '@/hooks/auth/useSignup';
 
 interface UserDetails {
   name: string;

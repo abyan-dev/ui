@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useVerify } from '@/hooks/useVerify';
+import { useVerify } from '@/hooks/auth/useVerify';
 import { Anchor, Button, Center, Stack, Text, Title } from '@mantine/core';
 import { siteConfig } from '@/config/site';
 
